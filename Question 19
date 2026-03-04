@@ -1,0 +1,23 @@
+import pandas as pd
+
+data = {
+    "Appliance": ["Appliance A", "Appliance B", "Appliance C"],
+    "Power (W)": [500, 1200, 200],
+    "Hours/Day": [3, 1.5, 10]
+}
+
+df = pd.DataFrame(data)
+
+df["Daily Consumption (kWh)"] = (df["Power (W)"] * df["Hours/Day"]) / 1000
+
+days = 30
+df["Monthly Consumption (kWh)"] = df["Daily Consumption (kWh)"] * days
+
+total_monthly_kwh = df["Monthly Consumption (kWh)"].sum()
+
+rate_per_unit = 5.75
+total_bill = total_monthly_kwh * rate_per_unit
+
+print(df)
+print(f"\nTotal Monthly Consumption: {total_monthly_kwh} kWh")
+print(f"Total Bill: ₹{total_bill}")
