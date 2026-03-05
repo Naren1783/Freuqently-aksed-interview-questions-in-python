@@ -1,0 +1,19 @@
+import java.util.*;
+class IVR
+{
+public static void main(String args[])
+{
+Scanner sc=new Scanner(System.in);
+System.out.println("1. Know my balance\n 2. Know my validity date\n 3. Know number of free calls available\n 4. Exit");
+System.out.println(" Enter your choice");
+int i=sc.nextInt();
+switch(i)
+ {
+  case 1: System.out.println("Your balance is:Rs. 200");
+          break;
+  case 2: System.out.println("Your validity is :Jan 2024");
+          break;
+  case 3:System.out.println("Number of free calls available      is:500");
+         break;
+  case 4:break;
+}} }
